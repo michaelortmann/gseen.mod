@@ -18,8 +18,8 @@
 
 #define MAKING_GSEEN
 #define MODULE_NAME "gseen"
-#define MODULE_VERSION "1.2.0"
-#define MODULE_NUMVERSION 10200
+#define MODULE_VERSION "1.3.0"
+#define MODULE_NUMVERSION 10300
 #include "../module.h"
 #include "../irc.mod/irc.h"
 #include "../server.mod/server.h"
@@ -258,24 +258,16 @@ char *gseen_start(Function * global_funcs)
 {
   global = global_funcs;
   Context;
-  module_register(MODULE_NAME, gseen_table, 1, 2);
+  module_register(MODULE_NAME, gseen_table, 1, 3);
   if (!(irc_funcs = module_depend(MODULE_NAME, "irc", 1, 0)))
     return "You need the irc module to use the gseen module.";
   if (!(server_funcs = module_depend(MODULE_NAME, "server", 1, 0)))
     return "You need the server module to use the gseen module.";
   if (!(channels_funcs = module_depend(MODULE_NAME, "channels", 1, 0)))
     return "You need the channels module to use the gseen module.";
-  if (!module_depend(MODULE_NAME, "eggdrop", 108, 0)) {
-    if (!module_depend(MODULE_NAME, "eggdrop", 107, 0)) {
-      if (!module_depend(MODULE_NAME, "eggdrop", 106, 0)) {
-        if (!module_depend(MODULE_NAME, "eggdrop", 105, 0)) {
-          if (!module_depend(MODULE_NAME, "eggdrop", 104, 0)) {
-            module_undepend(MODULE_NAME);
-            return "This module requires eggdrop1.4.0 or later";
-          }
-        }
-      }
-    }
+  if (!module_depend(MODULE_NAME, "eggdrop", 104, 0)) {
+    module_undepend(MODULE_NAME);
+    return "This module requires Eggdrop 1.4.0 or later.";
   }
   chanlangs = NULL;
   coreslangs = NULL;

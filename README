@@ -13,18 +13,18 @@ Installation:
 -------------
 
 gseen.mod is written for eggdrop1.6, but it should also work with eggdrop 1.4.
-It has been reported to work with eggdrop 1.8, but I did not test it
+It has been reported to work with eggdrop 1.8 and 1.9, but I did not test it
 myself on that version.
 
 You need the eggdrop source to compile the module.
 
-The following instructions assume, ~/eggdrop1.6.2/ is the directory
+The following instructions assume, ~/eggdrop-1.9.3/ is the directory
 where you installed your eggdrop from. (of course, other source dirs
 will work as well)
 
-Put gseen.mod.1.1.2.tar.gz in ~/eggdrop1.6.2/src/mod/,
-and unpack it (tar xfz gseen.mod.1.1.2.tar.gz). Change directory
-back to ~/eggdrop1.6.2/.
+Put gseen.mod.1.3.tar.gz in ~/eggdrop-1.9.3/src/mod/,
+and unpack it (tar xfz gseen.mod.1.3.tar.gz). Change directory
+back to ~/eggdrop-1.9.3/.
 
 Now just do what you've done when you compiled your bot:
 "./configure"
@@ -32,10 +32,10 @@ Now just do what you've done when you compiled your bot:
 "make"
 "make install"
 
-Don't forget to copy the langfiles from eggdrop1.6.2/src/mod/gseen.mod/ to
+Don't forget to copy the langfiles from eggdrop-1.9.3/src/mod/gseen.mod/ to
 eggdrop/language.
 
-All settings can be found in ~/eggdrop1.6.2/src/mod/gseen.mod/gseen.conf
+All settings can be found in ~/eggdrop-1.9.3/src/mod/gseen.mod/gseen.conf
 Copy it to your eggdrop directory, edit it to fit your needs and put
 "source gseen.conf" at the end of your eggdrop config file. The last thing
 to do is to .rehash your bot.
@@ -124,7 +124,8 @@ Homepage:
 ---------
 
 The newest gseen version can always be found at:
-http://www.kreativrauschen.com/gseen.mod/
+https://github.com/michaelortmann/gseen.mod
+https://www.kreativrauschen.com/gseen.mod/
 
 Thanks to:
 ----------
