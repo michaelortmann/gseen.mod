@@ -134,7 +134,7 @@ Thanks to:
 - everyone who tested the many buggy development versions :)
 - the eggdev team for developing eggdrop
 
-Most of all, I would like to thank Bass for writing bseen.tcl because alot
+Most of all, I would like to thank Bass for writing bseen.tcl because a lot
 of the ideas for this module came from using that tcl script. It's still the
 most powerful seen script, so if you want something that's easier to use than
 a module, get a copy of bseen.tcl.

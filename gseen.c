@@ -81,8 +81,8 @@ static time_t seenflood_time = 0;
 static int use_handles = 0;
 static int tell_seens = 1;
 static int botnet_seen = 1;
-int fuzzy_search = 1;          // search for the same user under a differnt nick
-static int wildcard_search = 1;// allow wildcard seaching? ("*!*@*.isp.de")
+int fuzzy_search = 1;          // search for the same user under a different nick
+static int wildcard_search = 1;// allow wildcard searching? ("*!*@*.isp.de")
 static int max_matches = 500;  // break if there are more than X matches
 static int hide_secret_chans = 1;	// #chan (+secret) => [secret]
 static int seen_nick_len = 9;

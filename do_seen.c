@@ -17,7 +17,7 @@
  */
 
 /* do_seen(): Checks if someone matches the mask, and returns the reply
- * mask : first paramater (e.g. "G`Quann", "G`Quann", "*!*@*.isp.de", ...)
+ * mask : first parameter (e.g. "G`Quann", "G`Quann", "*!*@*.isp.de", ...)
  * nick : nick of the one, who triggered the command
  * uhost: user@host of nick
  * chan : chan, where the command was triggered
@@ -235,14 +235,14 @@ static char *do_seennick(seendat *l)
 
   Context;
   if (!l) {
-    debug0("ERROR! Tryed to do a seennick on a NULL pointer!");
+    debug0("ERROR! Tried to do a seennick on a NULL pointer!");
     return "ERROR! seendat == NULL!!!";
   }
   glob_seendat = l;
   // l->type is the basic language-entry-number
   stype = l->type + 100;
   // in some cases, we might need a special reply, so modify the
-  // number if neccessary
+  // number if necessary
   switch (l->type) {
     case SEEN_JOIN:
       if (!onchan(l->nick, l->chan))

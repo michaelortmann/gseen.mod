@@ -2,13 +2,15 @@ Changes in gseen.mod: (since v1.0.0)
 --------------------
 
 1.3.0 (2022-11-18)
-- dos2unix
-- removed register keyword
-- fixed buffer overflow (Michael Ortmann)
+- fixed typos (Michael Ortmann)
+- fixed include for --disable-tls (Michael Ortmann)
+- dos2unix (Michael Ortmann)
+- removed register keyword (Michael Ortmann)
+- fixed buffer overflows (Michael Ortmann)
 - fixed some compiler warnings (Michael Ortmann)
 - Update slang_gseen_commands.c (wilkowy)
   Fixed hardcoded size and added year (useful for long `expire-seens`).
-- updated README
+- updated README (Michael Ortmann)
 - fixed module depend (Michael Ortmann)
 
 1.2.1 (2021-01-19)
