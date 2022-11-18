@@ -2,6 +2,8 @@ Changes in gseen.mod: (since v1.0.0)
 --------------------
 
 1.3.0 (2022-11-18)
+- Update slang_gseen_commands.c (wilkowy)
+  Fixed hardcoded size and added year (useful for long `expire-seens`).
 - updated README
 - fixed module depend (Michael Ortmann)
 
@@ -9,12 +11,12 @@ Changes in gseen.mod: (since v1.0.0)
 - fixed some compiler warnings (Michael Ortmann)
 
 1.1.2 (2017-01-02)
-- compatibility to eggdrop 1.8
+- compatibility with eggdrop 1.8
 
 1.1.1
 - fixed "no newline" compilation warnings that appeared on some systems.
 - fixed uninitialized "li" variable in do_seen()
-- fixed lacking compatibility to eggdrop1.4 (confirmation anyone?)
+- fixed lacking compatibility with eggdrop1.4 (confirmation anyone?)
 - new option: hide-secret-chans
 - new option: seen-nick-len
 
@@ -35,7 +37,7 @@ Changes in gseen.mod: (since v1.0.0)
   quietseen to quietseens
 
 1.0.7
-- added compatibility to !channels
+- added compatibility with !channels
 - fixed a bug relating strict-host 0 had some strange effects on
   !seen requests for users with ~ in their ident
 
