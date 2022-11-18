@@ -586,10 +586,8 @@ static char *handonchan(char *hand, char *chan)
     return 0;
   if (ch->channel.members > 0) {
     for (m = ch->channel.member; m; m = m->next) {
-      if (m->user) {
-        if (m->user->handle && !rfc_casecmp(m->user->handle, hand))
-          return m->nick;
-      }
+      if (m->user && !rfc_casecmp(m->user->handle, hand))
+        return m->nick;
     }
   }
   return NULL;
@@ -622,10 +620,8 @@ static struct chanset_t *handonanychan(char *hand)
   for (ch = chanset; ch; ch = ch->next) {
     if (ch->channel.members > 0) {
       for (m = ch->channel.member; m; m = m->next) {
-        if (m->user) {
-          if (m->user->handle && !rfc_casecmp(m->user->handle, hand))
-            return ch;
-        }
+        if (m->user && !rfc_casecmp(m->user->handle, hand))
+          return ch;
       }
     }
   }
