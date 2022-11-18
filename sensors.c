@@ -85,7 +85,7 @@ static int gseen_kick(char *nick, char *uhost, char *hand, char *chan,
 {
   struct chanset_t *ch = NULL;
   memberlist *m = NULL;
-  char msg[1024], *s;
+  char msg[1024];
   char buf[10] = "[secret]";
 
   Context;
@@ -100,16 +100,13 @@ static int gseen_kick(char *nick, char *uhost, char *hand, char *chan,
   }
   if (secretchan(chan))
     chan = buf;
-  s = msg;
-  s[0] = 0;
   m = ismember(ch, victim);
   if (!m) {
     debug2("Unable to seen %s getting kicked from %s", victim, chan);
     return 0;
   }
-  if ((strlen(nick) + strlen(reason) + 2) < 1024)
-    sprintf(s, "%s %s", nick, reason);
-  add_seen(SEEN_KICK, victim, m->userhost, chan, s, now,
+  snprintf(msg, sizeof msg, "%s %s", nick, reason);
+  add_seen(SEEN_KICK, victim, m->userhost, chan, msg, now,
   	   get_spent(victim, chan));
   return 0;
 }

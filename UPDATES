@@ -2,7 +2,7 @@ Changes in gseen.mod: (since v1.0.0)
 --------------------
 
 1.3.0 (2022-11-18)
-- fixed Wformat compiler warning (Michael Ortmann)
+- fixed Wformat and Wformat-overflow compiler warning (Michael Ortmann)
 - Update slang_gseen_commands.c (wilkowy)
   Fixed hardcoded size and added year (useful for long `expire-seens`).
 - updated README
