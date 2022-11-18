@@ -8,6 +8,9 @@ Changes in gseen.mod: (since v1.0.0)
 - updated README
 - fixed module depend (Michael Ortmann)
 
+1.2.1 (2021-01-19)
+- fixed buffer overflow (Michael Ortmann)
+
 1.2.0 (2020-12-15)
 - fixed some compiler warnings (Michael Ortmann)
 

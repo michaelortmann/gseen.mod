@@ -63,15 +63,13 @@ static void read_seens()
     putlog(LOG_MISC, "*", "Can't open gseen file, creating new database...");
     return;
   }
-  while (!feof(f)) {
-    buf[0] = 0;
-    s = buf;
-    fgets(s, 511, f);
+  while (fgets(buf, (sizeof buf) - 1, f)) {
     i = strlen(buf);
     if (buf[i - 1] == '\n')
       buf[i - 1] = 0;
     if ((buf[0] == 0) || (buf[0] == '#'))
       continue;
+    s = buf;
     type = newsplit(&s);
     if (!strcmp(type, "!")) {
       nick = newsplit(&s);
