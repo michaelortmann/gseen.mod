@@ -129,7 +129,7 @@ static void slang_free(struct slang_header *what)
 static int slang_load(struct slang_header *slang, char *filename)
 {
   FILE *f;
-  char *buffer, *s;
+  char buf[2000], *s;
   char *cmd, *sid, *strtol_ret;
 #ifndef SLANG_NOTYPES
   char *type;
@@ -143,45 +143,43 @@ static int slang_load(struct slang_header *slang, char *filename)
     putlog(LOG_MISC, "*", "Couldn't open slangfile \"%s\"!", filename);
     return 0;
   }
-  buffer = nmalloc(2000);
   line = 0;
-  while (!feof(f)) {
-    s = buffer;
-    if (fgets(s, 2000, f)) {
-      line++;
-      // at first, kill those stupid line feeds and carriage returns...
-      if (s[strlen(s) - 1] == '\n')
-        s[strlen(s) - 1] = 0;
-      if (s[strlen(s) - 1] == '\r')
-        s[strlen(s) - 1] = 0;
-      if (!s[0])
-        continue;
-      cmd = newsplit(&s);
+  while (fgets(buf, (sizeof buf) - 1, f)) {
+    line++;
+    // at first, kill those stupid line feeds and carriage returns...
+    if (buf[strlen(buf) - 1] == '\n')
+      buf[strlen(buf) - 1] = 0;
+    if (!buf[0])
+      continue;
+    if (buf[strlen(buf) - 1] == '\r')
+      buf[strlen(buf) - 1] = 0;
+    if (!buf[0])
+      continue;
+    s = buf;
+    cmd = newsplit(&s);
 
-      if (!strcasecmp(cmd, "T")) {
+    if (!strcasecmp(cmd, "T")) {
 #ifndef SLANG_NOTYPES
-        type = newsplit(&s);
-        slang->types = slang_type_add(slang->types, type, s);
+      type = newsplit(&s);
+      slang->types = slang_type_add(slang->types, type, s);
 #endif
-      } else if (!strcasecmp(cmd, "D")) {
-        sid = newsplit(&s);
-        id = strtol(sid, &strtol_ret, 10);
-        if (strtol_ret == sid) {
-          putlog(LOG_MISC, "*", "ERROR in slangfile \"%s\", line %d: %s is not a valid "
-                 "duration index!", filename, line, sid);
-          continue;
-        }
-        slang->durations = slang_duration_add(slang->durations, id, s);
-      } else {
-        id = strtol(cmd, &strtol_ret, 10);
-        if (strtol_ret == cmd)
-          continue;
-        slang->ids = slang_id_add(slang->ids, id, s);
+    } else if (!strcasecmp(cmd, "D")) {
+      sid = newsplit(&s);
+      id = strtol(sid, &strtol_ret, 10);
+      if (strtol_ret == sid) {
+        putlog(LOG_MISC, "*", "ERROR in slangfile \"%s\", line %d: %s is not a valid "
+               "duration index!", filename, line, sid);
+        continue;
       }
+      slang->durations = slang_duration_add(slang->durations, id, s);
+    } else {
+      id = strtol(cmd, &strtol_ret, 10);
+      if (strtol_ret == cmd)
+        continue;
+      slang->ids = slang_id_add(slang->ids, id, s);
     }
   }
   fclose(f);
-  nfree(buffer);
   return 1;
 }
 
