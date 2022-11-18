@@ -1,3 +1,5 @@
+#include <stddef.h>
+
 static void slang_send_botnick()
 {
   strncat(slang_text_buf, botname, sizeof(slang_text_buf));
