@@ -64,7 +64,7 @@ static struct slang_header *slang_create(struct slang_header *list, char *lang, 
   struct slang_header *nslang, *l;
 
   Assert(lang);
-  debug2("Creating language '%s' starting by %" PRIdPTR, lang, list);
+  debug2("Creating language '%s' starting by %" PRIdPTR, lang, (intptr_t) list);
   for (nslang = list; nslang; nslang = nslang->next)
     if (!strcasecmp(nslang->lang, lang))
       return list;
