@@ -48,9 +48,7 @@ static int nolog(char *chan)
 {
   char buf[121], *b;
 
-  Context;
-  strncpy(buf, no_log, 120);
-  buf[120] = 0;
+  strlcpy(buf, no_log, sizeof buf);
   b = buf;
   while (b[0])
     if (!strcasecmp(chan, newsplit(&b)))
@@ -66,7 +64,6 @@ static int gseen_join(char *nick, char *uhost, char *hand, char *chan)
 {
   char buf[10] = "[secret]";
 
-  Context;
   if (nolog(chan))
     return 0;
   if (use_handles && (hand[0] != '*'))
@@ -88,7 +85,6 @@ static int gseen_kick(char *nick, char *uhost, char *hand, char *chan,
   char msg[1024];
   char buf[10] = "[secret]";
 
-  Context;
   if (nolog(chan))
     return 0;
   if (use_handles && (hand[0] != '*'))
@@ -116,7 +112,6 @@ static int gseen_nick(char *nick, char *uhost, char *hand, char *chan,
 {
   char buf[10] = "[secret]";
 
-  Context;
   if (nolog(chan))
     return 0;
   if (use_handles && (hand[0] != '*'))
@@ -138,7 +133,6 @@ static int gseen_part(char *nick, char *uhost, char *hand, char *chan,
 {
   char buf[10] = "[secret]";
 
-  Context;
   if (nolog(chan))
     return 0;
   if (use_handles && (hand[0] != '*'))
@@ -153,7 +147,6 @@ static int gseen_part(char *nick, char *uhost, char *hand, char *chan)
 {
   char buf[10] = "[secret]";
 
-  Context;
   if (nolog(chan))
     return 0;
   if (use_handles && (hand[0] != '*'))
@@ -170,7 +163,6 @@ static int gseen_sign(char *nick, char *uhost, char *hand, char *chan,
 {
   char buf[10] = "[secret]";
 
-  Context;
   if (nolog(chan))
     return 0;
   if (use_handles && (hand[0] != '*'))
@@ -185,7 +177,6 @@ static int gseen_splt(char *nick, char *uhost, char *hand, char *chan)
 {
   char buf[10] = "[secret]";
 
-  Context;
   if (nolog(chan))
     return 0;
   if (use_handles && (hand[0] != '*'))
@@ -200,7 +191,6 @@ static int gseen_rejn(char *nick, char *uhost, char *hand, char *chan)
 {
   char buf[10] = "[secret]";
 
-  Context;
   if (nolog(chan))
     return 0;
   if (use_handles && (hand[0] != '*'))
@@ -213,7 +203,6 @@ static int gseen_rejn(char *nick, char *uhost, char *hand, char *chan)
 
 static int gseen_chjn STDVAR
 {
-  Context;
   BADARGS(7, 7, " bot hand chan flag idx host");
   add_seen(SEEN_CHJN, argv[2], argv[6], argv[3], argv[1], now, -1);
   return 0;
@@ -221,7 +210,6 @@ static int gseen_chjn STDVAR
 
 static int gseen_chpt STDVAR
 {
-  Context;
   BADARGS(5, 5, " bot hand idx chan");
   add_seen(SEEN_CHPT, argv[2], "unknown", argv[4], argv[1], now, -1);
   return 0;

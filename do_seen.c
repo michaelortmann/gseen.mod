@@ -38,7 +38,6 @@ static char *do_seen(char *mask, char *nick, char *uhost, char *chan, int bns)
   struct laston_info *li;
   struct chanset_t *ch;
 
-  Context;
   start_seentime_calc();
   if (seen_reply) {
     nfree(seen_reply);
@@ -233,7 +232,6 @@ static char *do_seennick(seendat *l)
 //  char buf[256], *msg;
   int stype;
 
-  Context;
   if (!l) {
     debug0("ERROR! Tried to do a seennick on a NULL pointer!");
     return "ERROR! seendat == NULL!!!";
@@ -298,7 +296,6 @@ static gseenres *findseens(char *mask, int *ret, int fuzzy)
   seendat *l;
   int wild;
 
-  Context;
   start_seentime_calc();
   *ret = WS_OK;
   l = NULL;
@@ -435,7 +432,6 @@ static void sortresults()
   gseenres *last, *p, *c, *n;
   int a, b;
 
-  Context;
   again = 1;
   last = NULL;
   while ((results != last) && (again)) {
@@ -464,7 +460,6 @@ static void sortresults()
     }
     last = c;
   }
-  Context;
   return;
 }
 
@@ -474,7 +469,6 @@ static void sortrequests(seenreq *l)
   seenreq_by *last, *p, *c, *n;
   int a, b;
 
-  Context;
   again = 1;
   last = NULL;
   while ((l->by != last) && (again)) {
@@ -503,7 +497,6 @@ static void sortrequests(seenreq *l)
     }
     last = c;
   }
-  Context;
   return;
 }
 
@@ -635,7 +628,6 @@ static void add_seenreq(char *nick, char *from, char *host, char *chan,
   seenreq_by *b, *nb;
   char buf[10] = "[secret]";
 
-  Context;
   if (!tell_seens)
     return;
   if (strcmp(chan, "[partyline]") && secretchan(chan))
@@ -729,7 +721,6 @@ static void free_seenreq()
   seenreq *l, *ll;
   seenreq_by *b, *bb;
 
-  Context;
   l = requests;
   while (l) {
     b = l->by;

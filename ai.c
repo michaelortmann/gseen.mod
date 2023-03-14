@@ -20,9 +20,7 @@ static int quietaiseens(char *chan)
 {
   char buf[121], *b;
 
-  Context;
-  strncpy(buf, quiet_ai_seen, 120);
-  buf[120] = 0;
+  strlcpy(buf, quiet_ai_seen, sizeof buf);
   b = buf;
   while (b[0])
     if (!strcasecmp(chan, newsplit(&b)))
@@ -42,7 +40,6 @@ static int tcl_pubmseen STDVAR
   seendat *l;
   int i;
 
-  Context;
   BADARGS(6, 6, " nick uhost hand chan text");
   nick = argv[1];
   uhost = argv[2];
@@ -54,13 +51,11 @@ static int tcl_pubmseen STDVAR
   for (i = 0; i < strlen(text); i++)
     if (strchr("!?.,\"", text[i]))
       text[i] = ' ';
-  strncpy(buf, ignore_words, 1023);
-  buf[1023] = 0;
+  strlcpy(buf, ignore_words, sizeof buf);
   words = buf;
   while (words[0])
     add_ignoredword(newsplit(&words));
-  strncpy(buf, text, 1023);
-  buf[1023] = 0;
+  strlcpy(buf, text, sizeof buf);
   words = buf;
   while (words[0]) {
     word = newsplit(&words);

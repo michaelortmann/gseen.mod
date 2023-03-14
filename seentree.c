@@ -199,7 +199,6 @@ static void _count_seens(void *node)
 
 static int tcl_killseen STDVAR
 {
-  Context;
   BADARGS(2, 2, " nick");
   findseen_temp.nick = argv[1];
   btree_remove(&seentree, &findseen_temp);

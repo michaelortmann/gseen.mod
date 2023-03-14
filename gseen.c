@@ -18,8 +18,8 @@
 
 #define MAKING_GSEEN
 #define MODULE_NAME "gseen"
-#define MODULE_VERSION "1.3.0"
-#define MODULE_NUMVERSION 10300
+#define MODULE_VERSION "1.4.0"
+#define MODULE_NUMVERSION 10400
 #include "../module.h"
 #include "../irc.mod/irc.h"
 #include "../server.mod/server.h"
@@ -37,10 +37,6 @@ static Function *global = NULL, *irc_funcs = NULL, *server_funcs = NULL, *channe
 
 #ifndef EGG_IS_MAX_VER
 #define EGG_IS_MAX_VER(ver)		((ver) >= 10400)
-#endif
-
-#ifndef Context
-#define Context context
 #endif
 
 #ifndef findchan_by_dname
@@ -140,7 +136,6 @@ static void gseen_report(int idx, int details)
 {
   int size = 0;
 
-  Context;
   if (details) {
     size = gseen_expmem();
     dprintf(idx, "    using %d bytes\n", size);
@@ -158,7 +153,6 @@ static void gseen_minutely ()
 
 static void gseen_daily ()
 {
-  Context;
   purge_seens();
 }
 
@@ -198,7 +192,6 @@ static tcl_coups my_tcl_coups[] =
 
 static char *gseen_close()
 {
-  Context;
   write_seens();
   slang_glob_free();
   free_gseen();
@@ -257,8 +250,7 @@ static Function gseen_table[] =
 char *gseen_start(Function * global_funcs)
 {
   global = global_funcs;
-  Context;
-  module_register(MODULE_NAME, gseen_table, 1, 3);
+  module_register(MODULE_NAME, gseen_table, 1, 4);
   if (!(irc_funcs = module_depend(MODULE_NAME, "irc", 1, 0)))
     return "You need the irc module to use the gseen module.";
   if (!(server_funcs = module_depend(MODULE_NAME, "server", 1, 0)))

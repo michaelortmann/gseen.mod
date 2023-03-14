@@ -41,9 +41,7 @@ static int nopub(char *chan)
 {
   char buf[121], *b;
 
-  Context;
-  strncpy(buf, no_pub, 120);
-  buf[120] = 0;
+  strlcpy(buf, no_pub, sizeof buf);
   b = buf;
   while (b[0])
     if (!strcasecmp(chan, newsplit(&b)))
@@ -59,9 +57,7 @@ static int quietseen(char *chan)
 {
   char buf[121], *b;
 
-  Context;
-  strncpy(buf, quiet_seen, 120);
-  buf[120] = 0;
+  strlcpy(buf, quiet_seen, sizeof buf);
   b = buf;
   while (b[0])
     if (!strcasecmp(chan, newsplit(&b)))
@@ -77,7 +73,6 @@ static int cmd_seen(struct userrec *u, int idx, char *par)
 {
   char *query;
   
-  Context;
   if (seenflood())
     return 0;
   reset_global_vars();
@@ -94,7 +89,6 @@ static int cmd_seen(struct userrec *u, int idx, char *par)
 
 static int cmd_seenstats(struct userrec *u, int idx, char *par)
 {
-  Context;
   if (seenflood())
     return 0;
   reset_global_vars();
@@ -108,7 +102,6 @@ static int cmd_seenstats(struct userrec *u, int idx, char *par)
 
 static int cmd_purgeseens(struct userrec *u, int idx, char *par)
 {
-  Context;
   purge_seens();
   putlog(LOG_CMDS, "*", "#%s# purgeseens", dcc[idx].nick);
   return 0;
@@ -122,7 +115,6 @@ static int pub_seen(char *nick, char *host, char *hand,
   struct chanset_t *chan;
 #endif
 
-  Context;
   if (seenflood() || nopub(channel))
     return 0;
   reset_global_vars();
@@ -158,7 +150,6 @@ static int pub_seenstats(char *nick, char *host, char *hand,
   struct chanset_t *chan;
 #endif
 
-  Context;
   if (seenflood())
     return 0;
   if (nopub(channel))
@@ -188,7 +179,6 @@ static int pub_seenstats(char *nick, char *host, char *hand,
 
 static int msg_seen(char *nick, char *uhost, struct userrec *u, char *text)
 {
-  Context;
   if (seenflood())
     return 0;
   reset_global_vars();
@@ -210,7 +200,6 @@ static int pub_seennick(char *nick, char *host, char *hand,
   struct chanset_t *chan;
 #endif
 
-  Context;
   if (seenflood())
     return 0;
   if (nopub(channel))
@@ -255,7 +244,6 @@ static int msg_seennick(char *nick, char *uhost, struct userrec *u, char *text)
 {
   seendat *l;
 
-  Context;
   if (seenflood())
     return 0;
   putlog(LOG_CMDS, "*", "(%s!%s) !%s! seennick %s", nick, uhost, u ? u->handle : "*", text);
@@ -278,7 +266,6 @@ static int cmd_seennick(struct userrec *u, int idx, char *text)
 {
   seendat *l;
 
-  Context;
   if (seenflood())
     return 0;
   putlog(LOG_CMDS, "*", "#%s# seennick %s", dcc[idx].nick, text);
@@ -303,7 +290,6 @@ static int bot_gseen_req(char *bot, char *code, char *par)
   char tosend[256];
   int i;
 
-  Context;
   if (seenflood())
     return 0;
   i = nextbot(bot);
@@ -333,7 +319,6 @@ static int bot_gseen_rep(char *bot, char *code, char *par)
   char *nick, *chan, *reply;
   int i;
 
-  Context;
   if (seenflood())
     return 0;
   if (!bnsnick || !bnschan) {

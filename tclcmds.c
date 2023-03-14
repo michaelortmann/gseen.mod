@@ -18,7 +18,6 @@
 
 static int tcl_setchanseenlang STDVAR
 {
-  Context;
   BADARGS(3, 3, " channel language");
   chanlangs = slang_chanlang_add(chanlangs, argv[1], argv[2]);
   return TCL_OK;
@@ -30,7 +29,6 @@ static int tcl_loadseenslang STDVAR
   char *shortname, *longname, *filename;
   struct slang_header *slang;
 
-  Context;
   BADARGS(4, 4, " language description langfile");
   shortname = argv[1];
   longname = argv[2];

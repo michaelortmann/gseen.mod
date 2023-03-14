@@ -19,7 +19,6 @@
 /* maskstricthost():
  * basically the same as maskhost() from src/misc.c, but _never_ stripts
  * "~+-^=" off the host
- * maskhost() version: * $Id: misc.c,v 1.1 2005/04/14 10:55:00 Administrator Exp $
  */
 static void maskstricthost(const char *s, char *nw)
 {

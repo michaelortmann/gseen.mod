@@ -1,6 +1,11 @@
 Changes in gseen.mod: (since v1.0.0)
 --------------------
 
+1.4.0 (2023-03-15)
+- Updated README
+- removed CVS keyword (Michael Ortmann)
+- removed Context (Michael Ortmann)
+
 1.3.0 (2022-11-18)
 - fixed typos (Michael Ortmann)
 - fixed include for --disable-tls (Michael Ortmann)

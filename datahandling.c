@@ -24,7 +24,6 @@ static void write_seens()
   FILE *f;
   char s[125];
 
-  Context;
   /* putlog(LOG_MISC, "*", "Saving seen data..."); */
   if (!gseenfile[0])
     return;
@@ -57,7 +56,6 @@ static void read_seens()
   time_t when;
   int spent, iType, i;
 
-  Context;
   f = fopen(gseenfile, "r");
   if (f == NULL) {
     putlog(LOG_MISC, "*", "Can't open gseen file, creating new database...");
@@ -90,7 +88,6 @@ static void read_seens()
     }
   }
   fclose(f);
-  Context;
   return;
 }
 
@@ -99,7 +96,6 @@ static void purge_seens()
   seenreq *r, *rr;
   seenreq_by *b, *bb;
 
-  Context;
   if (!expire_seens)
     return;
   btree_getall_expanded(&seentree, purge_seen_tree);
