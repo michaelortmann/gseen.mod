@@ -1,6 +1,9 @@
 Changes in gseen.mod: (since v1.0.0)
 --------------------
 
+1.4.1 (2023-06-07)
+- Fix commit 62cdf9a2bc0aa1fb813df9538ebbd4ae5f41c5d3
+
 1.4.0 (2023-03-15)
 - Updated README
 - removed CVS keyword (Michael Ortmann)
