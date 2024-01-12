@@ -17,7 +17,7 @@
  */
 
 /* maskstricthost():
- * basically the same as maskhost() from src/misc.c, but _never_ stripts
+ * basically the same as maskhost() from src/misc.c, but _never_ strips
  * "~+-^=" off the host
  */
 static void maskstricthost(const char *s, char *nw)

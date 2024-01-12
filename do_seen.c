@@ -444,15 +444,15 @@ static void sortresults()
         a = b = 0;
       else
         a = c->seen->when;
-        b = n->seen->when;
+      b = n->seen->when;
       if (a < b) {
-  again = 1;
-  c->next = n->next;
-  n->next = c;
-  if (p == NULL)
-    results = n;
-  else
-    p->next = n;
+        again = 1;
+        c->next = n->next;
+        n->next = c;
+        if (p == NULL)
+          results = n;
+        else
+          p->next = n;
       }
       p = c;
       c = n;
@@ -481,15 +481,15 @@ static void sortrequests(seenreq *l)
         a = b = 0;
       else
         a = c->when;
-        b = n->when;
+      b = n->when;
       if (a < b) {
-  again = 1;
-  c->next = n->next;
-  n->next = c;
-  if (p == NULL)
-    l->by = n;
-  else
-    p->next = n;
+        again = 1;
+        c->next = n->next;
+        n->next = c;
+        if (p == NULL)
+          l->by = n;
+        else
+          p->next = n;
       }
       p = c;
       c = n;

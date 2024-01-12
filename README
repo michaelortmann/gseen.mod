@@ -20,8 +20,8 @@ The following instructions assume, ~/eggdrop-1.9.5/ is the directory
 where you installed your eggdrop from. (of course, other source dirs
 will work as well)
 
-Put gseen.mod-1.4.1.tar.gz in ~/eggdrop-1.9.5/src/mod/,
-and unpack it (tar xfz gseen.mod-1.4.1.tar.gz). Change directory
+Put gseen.mod-1.4.2.tar.gz in ~/eggdrop-1.9.5/src/mod/,
+and unpack it (tar xfz gseen.mod-1.4.2.tar.gz). Change directory
 back to ~/eggdrop-1.9.5/.
 
 Now just do what you've done when you compiled your bot:
