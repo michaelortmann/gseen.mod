@@ -1,6 +1,10 @@
 Changes in gseen.mod: (since v1.0.0)
 --------------------
 
+1.4.3 (2024-06-06
+- Fix restrict
+- Fix indentation
+
 1.4.2 (2024-01-12)
 - Fix misleading indentation
 - Fix typo
