@@ -37,7 +37,7 @@ static int tcl_loadseenslang STDVAR
   slang = slang_find(coreslangs, shortname);
   Assert(slang);
   if (!slang_load(slang, filename)) {
-    Tcl_AppendResult(irp, "Couldn't open seenslang file!!!", NULL);
+    Tcl_SetResult(irp, "Couldn't open seenslang file!", TCL_STATIC);
     return TCL_ERROR;
   }
   return TCL_OK;

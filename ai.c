@@ -74,12 +74,12 @@ static int tcl_pubmseen STDVAR
       }
       add_seenreq(word, nick, uhost, chan, now);
       free_ignoredwords();
-      Tcl_AppendResult(irp, "1", NULL);
+      Tcl_SetResult(irp, "1", TCL_STATIC);
       return TCL_OK;
     }
   }
   free_ignoredwords();
-  Tcl_AppendResult(irp, "0", NULL);
+  Tcl_SetResult(irp, "0", TCL_STATIC);
   return TCL_OK;
 }
 

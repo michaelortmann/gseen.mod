@@ -149,7 +149,7 @@ static void btree_recursive_free(struct generic_binary_tree *tree,
  * calls the specified function for each item in the tree.
  * NOTE: getall() calls the proc _before_ it proceeds into recursion. This way,
  *       one can safely store the tree into a file without mixing up its form.
- *       But if you delete an item from the called prcedure, this function
+ *       But if you delete an item from the called procedure, this function
  *       WILL crash. Use btree_getall() expanded instead.
  */
 static void btree_getall(struct generic_binary_tree *tree, void (*func) (void *))

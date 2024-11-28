@@ -234,7 +234,7 @@ static char *do_seennick(seendat *l)
 
   if (!l) {
     debug0("ERROR! Tried to do a seennick on a NULL pointer!");
-    return "ERROR! seendat == NULL!!!";
+    return "ERROR! seendat == NULL!";
   }
   glob_seendat = l;
   // l->type is the basic language-entry-number
