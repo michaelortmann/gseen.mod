@@ -1,5 +1,9 @@
 Changes in gseen.mod: (since v1.0.0)
 --------------------
+1.4.5 (2025-02-20)
+
+- fixed buffer overflows
+
 1.4.4 (2024-11-28)
 
 - Tcl_AppendResult() -> Tcl_SetResult()
