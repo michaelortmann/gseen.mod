@@ -1,0 +1,132 @@
+#####################################################################
+#
+# Dutch language file for GSeen.Mod v1.1.1
+# (made by Martin, corrections by Dieter and Robby)
+#
+# Just edit the text below to fit your needs. You can add or remove
+# any tag just like you want, they do not need to appear in a special
+# order (or number).
+#
+# If you enter more than one line per ID, then a random one will be
+# chosen for each reply. (this does not work for the time strings)
+#
+# If you think you need more tags, just email me and maybe I'll add
+# them in the next release.
+#
+# A complete list of available Tags can be found at the end of the
+# file slang_gseen_commands.c (unfortunately, it does not contain any
+# descriptions for the tags)
+#
+#####################################################################
+
+#
+## time string
+#
+# each time string in singular and plural
+#
+D 0 jaar
+D 1 jaren
+D 2 week
+D 3 weken
+D 4 dag
+D 5 dagen
+D 6 uur
+D 7 uur
+D 8 minuut
+D 9 minuten
+D 10 seconde
+D 11 seconden
+# if an invalid time value was supplied, output the following string
+D 12 een tijdje
+
+#
+## Prefixes
+#
+# These are the prefixes of the replies. By default, there's only
+# a prefix for public requests (so you know for whom the answer is),
+# but you can also define prefixes for other requests.
+
+# for replies in the channel:
+10 <?nick/?>, 
+# for replies via notice:
+11
+# for replies via PRIVMSG
+12
+# for replies on the partyline
+13
+
+#
+## error messages
+#
+54 Weet jij wel hoe dit werkt?
+54 Is het niet makkelijker als je zegt wie je zoekt?
+54 42.
+55 Kijk eens in de spiegel? ^_^
+55 Spiegeltje, spiegeltje aan de wand...
+55 Heeft u een gespleten persoonlijkheid? *eg*
+56 Als je <?query/?> niet kan zien dan ben je toe aan een nieuwe bril. ^_^
+56 Kijk eens wat beter in de nicklijst van dit kanaal.
+57 Het spijt me, maar wildcards ('?' of '*') zijn niet toegestaan.
+58 Hum... denk je niet dat die nick wat te lang is? ^_^
+58 Weet jij de maximum lengte van de nicks wel?
+
+#
+## no result
+#
+65 Ik kan me <?query/?> niet herinneren.
+65 <?query/?>? Hmm... Ik probeer me die te herinneren.. misschien.. ik weet het niet zeker.. nee. Ik herinner me <?query/?> niet.
+66 Ik heb <?query/?> niet meer gezien sinds <?laston/?>.
+67 Ik heb niks over <?query/?> gevonden.
+67 Het spijt me maar ik ken <?query/?> niet.
+68 Ouch, ik vind te veel over wat je zoekt. Kan je iets specifieker zijn?
+
+#
+## victim is online
+#
+73 <?query/?> is <?othernick/?>, en die is hier nu.
+74 <?query/?> is op dit ogenblik in <?otherchan/?> 
+
+#
+## results found
+#
+75 Uw zoekopdracht leverde 1 treffer op:
+76 Uw zoekopdracht leverde <?numresults/?> resultaten op:
+77 Uw zoekopdracht leverde <?numresults/?> resultaten op, maar dit zijn de 5 recentste:
+
+#
+## results found by another bot in the botnet
+#
+85 <?remotebot/?> zegt: 
+
+#
+## the core info
+#
+101 <?snick/?> (<?shost/?>) is het laatst <?schan/?> binnen gekomen, <?swhen/?> geleden (<?stime/?>). <?snick/?> is daar nog steeds aanwezig.
+121 <?snick/?> (<?shost/?>) is het laatst <?schan/?> binnen gekomen, <?swhen/?> geleden (<?stime/?>), maar <?snick/?> is sindsdien in rook opgegaan.
+102 <?snick/?> (<?shost/?>) is het laatst gezien bij het verlaten van <?schan/?>, <?swhen/?> geleden (<?stime/?>), na daar <?spent/?> gezeten te hebben.
+103 <?snick/?> (<?shost/?>) is het laatst gezien bij het afsluiten, op <?schan/?>, <?swhen/?> geleden (<?stime/?>) met als quit reden "<?smsg/?>" na daar <?spent/?> geweest te zijn.
+104 <?snick/?> (<?shost/?>) veranderde van nick naar <?snick2/?> op <?schan/?>, <?swhen/?> geleden (<?stime/?>). <?snick2/?> is daar nog steeds aanwezig.
+124 <?snick/?> (<?shost/?>) veranderde van nick naar <?snick2/?> op <?schan/?>, <?swhen/?> geleden (<?stime/?>), maar <?snick2/?> is sindsdien in rook opgegaan.
+105 <?snick/?> (<?shost/?>) veranderde van nick van <?snick2/?> naar uw zoekopdracht (<?snick/?>), op <?schan/?>, <?swhen/?> geleden (<?stime/?>). <?snick/?> is daar nog steeds aanwezig.
+125 <?snick/?> (<?shost/?>) veranderde van nick van <?snick2/?> naar uw zoekopdracht (<?snick/?>), op <?schan/?>, <?swhen/?> geleden (<?stime/?>), maar <?snick/?> is sindsdien in rook opgegaan.
+106 <?snick/?> (<?shost/?>) is gekickt uit <?schan/?> door <?punisher/?> (reden:<?kickreason/?>), <?swhen/?> geleden (<?stime/?>), na daar <?spent/?> aanwezig te zijn.
+107 <?snick/?> (<?shost/?>) is door een netsplit gequit uit <?schan/?>, <?swhen/?> geleden (<?stime/?>), na daar <?spent/?> aanwezig te zijn.
+108 <?snick/?> (<?shost/?>) is het laatst gezien bij het herjoinen van <?schan/?> na een netsplit, <?swhen/?> geleden (<?stime/?>). <?snick/?> is daar nog steeds aanwezig.
+128 <?snick/?> (<?shost/?>) is het laatst gezien bij het herjoinen van <?schan/?> na een netsplit, <?swhen/?> geleden (<?stime/?>), maar die is daarna opeens verdwenen.
+109 <?snick/?> is het laatst de botnet kanaal <?schan/?> binnen gekomen vanaf <?bnbot/?> <?swhen/?> geleden (<?stime/?>).
+129 <?snick/?> is het laatst de partyline binnen gekomen vanaf <?bnbot/?> <?swhen/?> geleden (<?stime/?>).
+110 <?snick/?> is het laatst gezien bij het verlaten van botnet kanaal <?schan/?> van <?bnbot/?> <?swhen/?> geleden (<?stime/?>).
+130 <?snick/?> heeft de partyline verlaten vanaf <?bnbot/?> <?swhen/?> geleden (<?stime/?>).
+140 <?snick/?> (<?shost/?>) is het laatst gezien op <?schan/?> <?swhen/?> geleden (<?stime/?>).
+
+#
+## seen notification
+#
+170 <?rnick/?> (<?rhost/?>) heeft naar u gezocht op <?rchan/?> <?rwhen/?> geleden (<?rtime/?>).
+171 Er zijn <?requests/?> personen op zoek naar u:
+172 De laatste was <?rnick/?> (<?rhost/?>) op <?rchan/?> <?rwhen/?> geleden (<?rtime/?>).
+
+#
+## seen stats
+#
+180 Ik weet alles van <?totalnicks/?> nicks en dat gebruikt <?totalbytes/?> bytes.
