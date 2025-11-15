@@ -630,7 +630,7 @@ static void add_seenreq(char *nick, char *from, char *host, char *chan,
 
   if (!tell_seens)
     return;
-  if (strcmp(chan, "[partyline]") && secretchan(chan))
+  if (strcmp(chan, "[partyline]") && secretchan(chan) && hide_secret_chans)
     chan = buf;
   for (l = requests; l; l = l->next) {
     if (!strcasecmp(nick, l->nick)) {

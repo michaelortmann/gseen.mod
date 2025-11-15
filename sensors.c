@@ -68,7 +68,7 @@ static int gseen_join(char *nick, char *uhost, char *hand, char *chan)
     return 0;
   if (use_handles && (hand[0] != '*'))
     nick = hand;
-  if (secretchan(chan))
+  if (secretchan(chan) && hide_secret_chans)
     chan = buf;
   add_seen(SEEN_JOIN, nick, uhost, chan, "", now, get_spent(nick, chan));
   report_seenreq(chan, nick);
@@ -94,7 +94,7 @@ static int gseen_kick(char *nick, char *uhost, char *hand, char *chan,
     debug2("Unable to seen %s getting kicked from %s", victim, chan);
     return 0;
   }
-  if (secretchan(chan))
+  if (secretchan(chan) && hide_secret_chans)
     chan = buf;
   m = ismember(ch, victim);
   if (!m) {
@@ -116,7 +116,7 @@ static int gseen_nick(char *nick, char *uhost, char *hand, char *chan,
     return 0;
   if (use_handles && (hand[0] != '*'))
     nick = hand;
-  if (secretchan(chan))
+  if (secretchan(chan) && hide_secret_chans)
     chan = buf;
   add_seen(SEEN_NICK, nick, uhost, chan, newnick, now, get_spent(nick, chan));
   if (!(use_handles && (hand[0] != '*')))
@@ -137,7 +137,7 @@ static int gseen_part(char *nick, char *uhost, char *hand, char *chan,
     return 0;
   if (use_handles && (hand[0] != '*'))
     nick = hand;
-  if (secretchan(chan))
+  if (secretchan(chan) && hide_secret_chans)
     chan = buf;
   add_seen(SEEN_PART, nick, uhost, chan, reason, now, get_spent(nick, chan));
   return 0;
@@ -151,7 +151,7 @@ static int gseen_part(char *nick, char *uhost, char *hand, char *chan)
     return 0;
   if (use_handles && (hand[0] != '*'))
     nick = hand;
-  if (secretchan(chan))
+  if (secretchan(chan) && hide_secret_chans)
     chan = buf;
   add_seen(SEEN_PART, nick, uhost, chan, "", now, get_spent(nick, chan));
   return 0;
@@ -167,7 +167,7 @@ static int gseen_sign(char *nick, char *uhost, char *hand, char *chan,
     return 0;
   if (use_handles && (hand[0] != '*'))
     nick = hand;
-  if (secretchan(chan))
+  if (secretchan(chan) && hide_secret_chans)
     chan = buf;
   add_seen(SEEN_SIGN, nick, uhost, chan, reason, now, get_spent(nick, chan));
   return 0;
@@ -181,7 +181,7 @@ static int gseen_splt(char *nick, char *uhost, char *hand, char *chan)
     return 0;
   if (use_handles && (hand[0] != '*'))
     nick = hand;
-  if (secretchan(chan))
+  if (secretchan(chan) && hide_secret_chans)
     chan = buf;
   add_seen(SEEN_SPLT, nick, uhost, chan, "", now, get_spent(nick, chan));
   return 0;
@@ -195,7 +195,7 @@ static int gseen_rejn(char *nick, char *uhost, char *hand, char *chan)
     return 0;
   if (use_handles && (hand[0] != '*'))
     nick = hand;
-  if (secretchan(chan))
+  if (secretchan(chan) && hide_secret_chans)
     chan = buf;
   add_seen(SEEN_REJN, nick, uhost, chan, "", now, get_spent(nick, chan));
   return 0;
