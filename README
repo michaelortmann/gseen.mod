@@ -30,9 +30,6 @@ Now just do what you've done when you compiled your bot:
 "make"
 "make install"
 
-Don't forget to copy the langfiles from eggdrop-1.10.0/src/mod/gseen.mod/ to
-eggdrop/language.
-
 All settings can be found in ~/eggdrop-1.10.0/src/mod/gseen.mod/gseen.conf
 Copy it to your eggdrop directory, edit it to fit your needs and put
 "source gseen.conf" at the end of your eggdrop config file. The last thing
