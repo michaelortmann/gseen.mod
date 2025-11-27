@@ -206,7 +206,6 @@ static char *gseen_close()
   rem_tcl_ints(my_tcl_ints);
   rem_tcl_coups(my_tcl_coups);
   rem_tcl_commands(mytcls);
-  rem_tcl_commands(gseentcls);
   rem_tcl_commands(seendebugtcls);
   rem_tcl_commands(gseentcls);
   rem_builtins(H_dcc, mydcc);
@@ -292,7 +291,6 @@ char *gseen_start(Function * global_funcs)
   add_builtins(H_kick, seen_kick);
   add_builtins(H_nick, seen_nick);
   add_builtins(H_part, seen_part);
-  add_builtins(H_sign, seen_sign);
   add_builtins(H_sign, seen_sign);
   add_builtins(H_splt, seen_splt);
   add_builtins(H_rejn, seen_rejn);
