@@ -16,13 +16,13 @@ gseen.mod should work with eggdrop 1.8.4 and newer.
 
 You need the eggdrop source to compile the module.
 
-The following instructions assume, ~/eggdrop-1.10.0/ is the directory
+The following instructions assume, ~/eggdrop-1.10.1/ is the directory
 where you installed your eggdrop from. (of course, other source dirs
 will work as well)
 
-Put gseen.mod-1.4.5.tar.gz in ~/eggdrop-1.10.0/src/mod/,
-and unpack it (tar xfz gseen.mod-1.4.5.tar.gz). Change directory
-back to ~/eggdrop-1.10.0/.
+Put gseen.mod-1.4.6.tar.gz in ~/eggdrop-1.10.1/src/mod/,
+and unpack it (tar xfz gseen.mod-1.4.6.tar.gz). Change directory
+back to ~/eggdrop-1.10.1/.
 
 Now just do what you've done when you compiled your bot:
 "./configure"
@@ -30,7 +30,7 @@ Now just do what you've done when you compiled your bot:
 "make"
 "make install"
 
-All settings can be found in ~/eggdrop-1.10.0/src/mod/gseen.mod/gseen.conf
+All settings can be found in ~/eggdrop-1.10.1/src/mod/gseen.mod/gseen.conf
 Copy it to your eggdrop directory, edit it to fit your needs and put
 "source gseen.conf" at the end of your eggdrop config file. The last thing
 to do is to .rehash your bot.

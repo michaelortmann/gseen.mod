@@ -1,5 +1,21 @@
 Changes in gseen.mod: (since v1.0.0)
 --------------------
+1.4.6 (2025-11-27)
+
+- dos2unix gseen.de.lang and gseen.en.lang
+- Remove some duplicate calls to binds/commands
+  https://github.com/michaelortmann/gseen.mod/pull/4
+  Thank you Robby-
+- Language files location improvement, and add the Dutch language
+  https://github.com/michaelortmann/gseen.mod/pull/3
+  Thank you Robby-
+- Fix typo in default_slang to default to "en", not "eng"
+  https://github.com/michaelortmann/gseen.mod/pull/2
+  Thank you Robby-
+- Make hide-secret-chans actually work
+  https://github.com/michaelortmann/gseen.mod/pull/1
+  Thank you Robby-
+
 1.4.5 (2025-02-20)
 
 - fixed buffer overflows
