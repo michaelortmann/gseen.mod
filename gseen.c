@@ -65,7 +65,7 @@ static char quiet_seen[121];
 static char quiet_ai_seen[121];
 static char no_log[121];
 static char ignore_words[1024];
-static char default_slang[21] = "eng";
+static char default_slang[21] = "en";
 static int gseen_numversion = MODULE_NUMVERSION;
 static int save_seens = 60;
 static int save_seens_temp = 1;
